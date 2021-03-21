@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/changes/1_create_organization_table.yaml
+  - include:
+      file: db/migration/changes/2_create_individual_table.yaml
+  - include:
+      file: db/migration/changes/3_create_employee_table.yaml
+  - include:
+      file: db/migration/changes/4_create_proposal_table.yaml
+  - include:
+      file: db/migration/changes/5_create_policy_table.yaml

@@ -1,0 +1,4 @@
+rootProject.name = 'ws-microservices'
+include 'insurance'
+include 'tests-e2e'
+

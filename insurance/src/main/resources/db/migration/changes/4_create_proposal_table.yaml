@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4_create_proposal_table
+      author: kovalskiy91
+      changes:
+        - createTable:
+            tableName: proposal
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  constraints:
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: plan_holder_id
+                  type: integer
+                  constraints:
+                    - nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames: plan_holder_id
+            baseTableName: proposal
+            constraintName: fk_proposal_plan_holder_id
+            referencedColumnNames: id
+            referencedTableName: organization
+        - createSequence:
+            sequenceName: proposal_id_seq
+            startValue: 100
+            incrementBy: 1

@@ -1,0 +1,18 @@
+version: "3"
+services:
+  pgadmin4:
+    image: "dpage/pgadmin4"
+    ports:
+      - "5431:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin"
+      PGADMIN_DEFAULT_PASSWORD: "PWD"
+
+  db-insurance:
+    image: "postgres:13"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: "insurance"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "PWD"

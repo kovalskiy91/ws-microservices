@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5_create_policy_table
+      author: kovalskiy91
+      changes:
+        - createTable:
+            tableName: policy
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  constraints:
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: proposal_id
+                  type: integer
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: plan_holder_id
+                  type: integer
+                  constraints:
+                    - nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames: proposal_id
+            baseTableName: policy
+            constraintName: fk_policy_proposal_id
+            referencedColumnNames: id
+            referencedTableName: proposal
+        - addForeignKeyConstraint:
+            baseColumnNames: plan_holder_id
+            baseTableName: policy
+            constraintName: fk_policy_plan_holder_id
+            referencedColumnNames: id
+            referencedTableName: organization
+        - createSequence:
+            sequenceName: policy_id_seq
+            startValue: 100
+            incrementBy: 1
