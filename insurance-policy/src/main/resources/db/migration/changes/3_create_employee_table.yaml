@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3_create_employee_table
+      author: kovalskiy91
+      changes:
+        - createTable:
+            tableName: employee
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  constraints:
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: individual_id
+                  type: integer
+              - column:
+                  name: employer_id
+                  type: integer
+        - addForeignKeyConstraint:
+            baseColumnNames: employer_id
+            baseTableName: employee
+            constraintName: fk_employee_employer_id
+            referencedColumnNames: id
+            referencedTableName: organization
+        - createSequence:
+            sequenceName: employee_id_seq
+            startValue: 100
+            incrementBy: 1

@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+spring:
+  jpa:
+    database-platform: "org.hibernate.dialect.PostgreSQLDialect"
+db:
+  insurance:
+    jdbcUrl: "jdbc:postgresql://localhost:5432/insurance"
+    username: "admin"
+    password: "PWD"

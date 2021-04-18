@@ -1,0 +1,14 @@
+zuul:
+  routes:
+    organizationals:
+      path: /api/v1/organizations/**
+      url: http://localhost:8081/api/v1/organizations
+    individuals:
+      path: /api/v1/individuals/**
+      url: http://localhost:8081/api/v1/individuals
+    proposals:
+      path: /api/v1/proposals/**
+      url: http://localhost:8082/api/v1/proposals
+    policies:
+      path: /api/v1/policies/**
+      url: http://localhost:8083/api/v1/policies

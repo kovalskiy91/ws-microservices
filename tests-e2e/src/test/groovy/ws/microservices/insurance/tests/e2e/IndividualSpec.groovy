@@ -32,8 +32,8 @@ class IndividualSpec extends Specification {
             firstName == individual.firstName
             lastName == individual.lastName
         }
-        and: "individual location is returned"
-        response.headers.location == "$servicePath$individualPath/${createdIndividual.id}"
+//        and: "individual location is returned"
+//        response.headers.location == "$servicePath$individualPath/${createdIndividual.id}"
     }
 
     def "should find individual by id when it exists"() {

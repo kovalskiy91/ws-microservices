@@ -1,0 +1,1 @@
+gardlew clean build

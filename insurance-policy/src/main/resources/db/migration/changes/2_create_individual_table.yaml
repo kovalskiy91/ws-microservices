@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2_create_individual_table
+      author: kovalskiy91
+      changes:
+        - createTable:
+            tableName: individual
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  constraints:
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: first_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: individual_id_seq
+            startValue: 100
+            incrementBy: 1

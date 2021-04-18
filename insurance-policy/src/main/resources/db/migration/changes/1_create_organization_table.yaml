@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id:  1_create_organization_table
+      author:  kovalskiy91
+      changes:
+        - createTable:
+            tableName: organization
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  constraints:
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: title
+                  type: varchar
+        - createSequence:
+            sequenceName: organization_id_seq
+            startValue: 100
+            incrementBy: 1
